@@ -1,0 +1,236 @@
+:root {
+  color-scheme: light;
+  --bg: #eef1f4;
+  --paper: #fff;
+  --ink: #1c2328;
+  --muted: #66727a;
+  --line: #cfd6db;
+  --accent: #2c5f73;
+  --accent-ink: #f4f7f8;
+  --danger: #8a2c2c;
+  --ok: #2c5f73;
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+}
+
+a {
+  color: var(--accent);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+h1 {
+  font-family: Georgia, serif;
+  font-size: 1.6rem;
+  margin: 0 0 12px;
+}
+
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+.stack {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.field {
+  display: grid;
+  gap: 4px;
+}
+
+.field input,
+.field textarea,
+.rf-node textarea {
+  font: inherit;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  width: 100%;
+}
+
+.field-error {
+  color: var(--danger);
+  font-size: 0.9rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 12px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: var(--accent-ink);
+  font: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.btn-ghost {
+  background: #fff;
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+.linkish {
+  border: 0;
+  background: none;
+  color: var(--muted);
+  font: inherit;
+  cursor: pointer;
+  padding: 0;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.notice {
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  margin: 8px 0;
+}
+
+.notice-error {
+  border-color: var(--danger);
+}
+
+.space-list {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+}
+
+.space-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.canvas-shell {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100%;
+}
+
+.canvas-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.adders {
+  display: flex;
+  gap: 8px;
+}
+
+.savebar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-left: auto;
+}
+
+.save-dirty {
+  color: #8a5a12;
+}
+
+.save-saving {
+  color: var(--accent);
+}
+
+.save-saved {
+  color: var(--ok);
+}
+
+.save-error,
+.save-conflict {
+  color: var(--danger);
+}
+
+.canvas-flow {
+  min-height: 0;
+}
+
+.rf-node {
+  width: 240px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 10px;
+  font-size: 13px;
+}
+
+.rf-node.is-selected {
+  border-color: var(--accent);
+}
+
+.rf-node header {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.rf-node textarea {
+  min-height: 88px;
+  resize: vertical;
+}
+
+.rf-node img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #dfe7ec;
+}
+
+.node-actions {
+  display: grid;
+  gap: 6px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.react-flow__handle {
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+}

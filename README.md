@@ -19,7 +19,15 @@ npm ci
 npm run dev
 ```
 
-Swagger: [http://localhost:4001/docs/](http://localhost:4001/docs/). Спецификация: [http://localhost:4001/openapi.json](http://localhost:4001/openapi.json) и [файл в репозитории](docs/openapi.json).
+В другом терминале:
+
+```sh
+npm run dev:web
+```
+
+API: [http://localhost:4001/docs/](http://localhost:4001/docs/). Канвас: [http://localhost:5174](http://localhost:5174).
+
+Спецификация: [http://localhost:4001/openapi.json](http://localhost:4001/openapi.json) и [файл в репозитории](docs/openapi.json).
 
 В Swagger создайте пространство через `POST /api/spaces`, затем получите его граф. Авторизация не нужна. Все пространства видны в одном локальном экземпляре сервера.
 
@@ -33,7 +41,16 @@ docs/                 задание и документация
 scripts/              проверки
 ```
 
-Назовите приложение в `apps/web` как `@canvas/web` и добавьте команды его запуска в README решения. Пока фронтенда нет, `npm run dev` запускает только API.
+Фронтенд — `@canvas/web` в `apps/web`.
+
+```sh
+npm run dev          # API, порт 4001
+npm run dev:web      # Vite, http://localhost:5174
+npm run build:web    # сборка фронтенда
+npm run preview:web  # preview собранного фронтенда
+```
+
+Как устроен клиент, debounce и очередь PUT — в [apps/web/README.md](apps/web/README.md).
 
 ```sh
 npm run check       # форматирование, сборка, тесты, OpenAPI
